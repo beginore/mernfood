@@ -13,10 +13,13 @@ import authRoute from "./routes/authRoute.js"
 import Food from "./models/food.js"
 import cartRoutes from "./routes/cartRoutes.js"
 import adminRoutes from "./routes/adminRoutes.js";
+import methodOverride from "method-override";
+
 
 dotenv.config({ path: "./config/config.env" });
 
 const app = express();
+app.use(methodOverride("_method"));
 
 app.use(session({
     secret: "asd",
